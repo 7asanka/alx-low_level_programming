@@ -1,10 +1,10 @@
 #include <stdio.h>
 
-
-/*c program that outputs string
- *  main() outputs string
+/**
+ * main - entry point
+ *
+ * Return: always 0 (success)
  */
-
 int main(void)
 {
 	puts("\"Programming is like building a multilingual puzzle");
