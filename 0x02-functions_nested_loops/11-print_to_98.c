@@ -28,9 +28,9 @@ void print_to_98(int n)
 			if (i < n)
 				printf("%d, ", i);
 			else
-				printf("%d", i)
+				printf("%d", i);
 		}
 	} else
 		printf("%d", 98);
-	_putchar("\n");
+	_putchar('\n');
 }
