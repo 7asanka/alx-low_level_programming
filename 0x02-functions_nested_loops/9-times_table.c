@@ -20,7 +20,7 @@ void times_table(void)
 				_putchar(' ');
 			}
 
-			if (r < 10)
+			if ((i * j) < 10)
 				_putchar(' ');
 
 			printf("%d", i * j);
