@@ -21,7 +21,7 @@ void times_table(void)
 			_putchar(',');
 			_putchar(' ');
 			}
-			if (result < 10)
+			if (r < 10)
 			_putchar(' ');
 			printf("%d", r);
 		}
