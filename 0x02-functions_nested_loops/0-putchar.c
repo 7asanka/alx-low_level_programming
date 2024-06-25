@@ -12,7 +12,7 @@ int main(void)
 
 	for (i = 0; pc[i] !='\0'; i++)
 	{
-		_putchar(str[i]);
+		_putchar(pc[i]);
 	}
 
 	return (0);
