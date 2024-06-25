@@ -8,14 +8,12 @@
  */
 void times_table(void)
 {
-	int i, j, r;
+	int i, j;
 
 	for (i = 0; i <= 9; i++)
 	{
 		for (j = 0; j <= 9; j++)
 		{
-			r = i * j;
-
 			if (j > 0)
 			{
 				_putchar(',');
@@ -25,7 +23,7 @@ void times_table(void)
 			if (r < 10)
 				_putchar(' ');
 
-			printf("%d", r);
+			printf("%d", i * j);
 		}
 		_putchar('\n');
 	}
