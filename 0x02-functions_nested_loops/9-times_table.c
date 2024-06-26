@@ -23,10 +23,8 @@ void times_table(void)
 
 			if (result < 10)
 				putchar(' ');
-			if (result < 100)
-				putchar(' ');
 
-			printf("%d", result);
+			printf(" %d", result);
 		}
 		putchar('\n');
 	}
