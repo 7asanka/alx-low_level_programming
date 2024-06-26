@@ -21,10 +21,11 @@ void times_table(void)
 				printf("%d\n", r);
 			} else
 			{
-				if (r >= 10 && r < 100)
-					printf("%d, ", r);
-				else if (r < 10)
-					printf("%d,  ", r);
+				printf(",");
+				if (r < 10)
+					printf(" ");
+				if (r < 100)
+					printf(" %d", r);
 			}
 		}
 	}
