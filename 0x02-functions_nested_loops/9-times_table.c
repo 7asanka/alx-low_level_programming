@@ -10,23 +10,21 @@ void times_table(void)
 {
 	int i, j, result;
 
-	for (i = 0; i <= 9; i++)
+	for (i = 0; i <= n; i++)
 	{
-		for (j = 0; j <= 9; j++)
+		for (j = 0; j <= n; j++)
 		{
 			result = i * j;
-
-			if (j > 0)
+			
+			if (j == 0)
 			{
-				printf(",");
+				printf("%2d", result);
 			}
-
-			if (result < 10 && result > 0)
-				printf(" ");
-			if (result < 100)
-				printf(" ");
-			printf("%d", result);
+			else
+			{
+				printf(", %2d", result);
+			}
 		}
-		printf("\n");
+		printf("$\n");
 	}
 }
