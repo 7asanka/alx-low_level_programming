@@ -9,7 +9,7 @@
 void times_table(void)
 {
 	int i, j, r;
-	
+
 	for (i = 0; i <= 9; i++)
 	{
 		for (j = 0; j <= 9; j++)
@@ -19,7 +19,7 @@ void times_table(void)
 			if (j < 9)
 			{
 				if (r < 100)
-					printf("%d, ",r);
+					printf("%d, ", r);
 				if (r < 10)
 					printf("%d,  ", r);
 			} else
