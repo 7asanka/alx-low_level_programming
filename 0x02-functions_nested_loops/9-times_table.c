@@ -18,14 +18,15 @@ void times_table(void)
 
 			if (j > 0)
 			{
-				putchar(',');
+				printf(",");
 			}
 
 			if (result < 10)
-				putchar(' ');
-
-			printf(" %d", result);
+				printf(" ");
+			if (result < 100)
+				printf(" ");
+			printf("%d", result);
 		}
-		putchar('\n');
+		printf("\n");
 	}
 }
