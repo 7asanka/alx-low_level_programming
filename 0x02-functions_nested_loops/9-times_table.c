@@ -21,9 +21,9 @@ void times_table(void)
 				printf("%d\n", r);
 			} else if (j < 9)
 			{
-				if (r < 100)
+				if ( r > 10 || r < 100)
 					printf("%d, ", r);
-				if (r < 10)
+				else if (r < 10)
 					printf("%d,  ", r);
 			}
 		}
