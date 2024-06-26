@@ -21,7 +21,7 @@ void times_table(void)
 				printf("%d\n", r);
 			} else if (j < 0)
 			{
-				prinf("%d", r);
+				printf("%d", r);
 			} else
 			{
 				if (r < 100)
