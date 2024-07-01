@@ -8,7 +8,12 @@
  */
 void _puts(char *str)
 {
-	int i, len = _strlen(str);
+	int i, j, len = 0;
+
+	for (i = 0; str[i] != '\0'; i++)
+	{
+		len++;
+	}
 
 	for (i = 0; i <= len; i++)
 	{
