@@ -14,10 +14,11 @@ char *_strcpy(char *dest, char *src)
 	char *dest_pointer = dest;
 
 	while (src[len] != '\0')
-		len++;
-	for (i = 0; i <= len + 1; i++)
 	{
-		dest[i] = src[i];
+		dest[len] = src[len];
+		len++;
 	}
+	dest[len] = src[len];
+
 	return (dest_pointer);
 }
