@@ -15,6 +15,13 @@ int _sqrt_recursion(int n)
 	return (_sqrt_helper(n, 0));
 }
 
+/**
+ * _sqrt_recursion_helper - Helper function to find the natural square root.
+ * @n: The number to find the square root of.
+ * @guess: The current guess for the square root.
+ *
+ * Return: The natural square root, or -1 if no natural square root exists.
+ */
 int _sqrt_helper(int n, int root)
 {
 	if (root * root > n)
