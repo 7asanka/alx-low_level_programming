@@ -1,23 +1,25 @@
 #include "main.h"
 
+_sqrt_helper(int n, int root);
+
 /**
  * _sqrt_recursion - returns natural square root of a number
  * @n: int
  *
- * @Return: natural root of a number if found, -1 if not found
+ * Return: if found returns root of the number, -1 if not found
  */
 int _sqrt_recursion(int n)
 {
-	int i;
-
 	if (n < 0)
 		return (-1);
+	return (_sqrt_helper(n, 0));
+}
 
-	for (i = 0; i < (n / 2) + 1; i++)
-	{
-		if (i * i == n)
-			return (i);
-	}
-
-	return (-1);
+_sqrt_helper(int n, int root)
+{
+	if (root * root > n)
+		return (-1);
+	if (root * root == n)
+		return (root);
+	return (_sqrt_helper(n, root + 1));
 }
