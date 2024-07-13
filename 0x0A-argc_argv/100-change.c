@@ -10,7 +10,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int i, cents, coins = = 0;
+	int i, cents, coins = 0;
 	int cvalue[] = {25, 10, 5, 2, 1};
 
 	if (argc != 2)
