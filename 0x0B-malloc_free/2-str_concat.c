@@ -13,6 +13,10 @@ char *str_concat(char *s1, char *s2)
 	int i, len1 = 0, len2 = 0;
 	char *new_string;
 
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
 	while (s1[len1] != '\0')
 		len1++;
 	while (s2[len2] != '\0')
@@ -26,18 +30,10 @@ char *str_concat(char *s1, char *s2)
 
 	for (i = 0; i < len1; i++)
 	{
-		if (s1 == NULL)
-		{
-			s1 = "";
-		}
 		new_string[i] = s1[i];
 	}
 	for (i = 0; i < len1 + len2; i++)
 	{
-		if (s2 == NULL)
-		{
-			s2 = "";
-		}
 		new_string[i + len1] = s2[i];
 	}
 	new_string[len1 + len2] = '\0';
