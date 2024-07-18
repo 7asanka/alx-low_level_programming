@@ -30,11 +30,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	for (i = 0; s1[i] != '\0'; i++)
 		new_str[i] = s1[i];
-	if (n >= len2 + 1)
-		for (i = 0; s2[i] != '\0'; i++)
-			new_str[i + len1] = s2[i];
-	else
-		for (i = 0; i < n; i++)
+	for (i = 0; i < n; i++)
 			new_str[i + len1] = s2[i];
 	new_str[len1 + len2 + 1] = '\0';
 
