@@ -1,0 +1,14 @@
+#include <stdlib.h>
+#include <stdio.h>
+
+/**
+ * main - prints the file this program is compiled from
+ *
+ * Return: always 0 (success)
+ */
+int main(void)
+{
+	pritnf("%s", __FILE__);
+
+	return (0);
+}
