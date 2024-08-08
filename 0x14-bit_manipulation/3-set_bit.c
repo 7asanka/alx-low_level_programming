@@ -1,16 +1,18 @@
 #include "main.h"
 
 /**
- * get_bit - returns the value of a bit at a given index
- * @n: the number to be checked
- * @index: the index of the bit, starting from 0
+ * set_bit - sets a bits value to 1 at a given index
+ * @n: value
+ * @index: index of the bit
  *
- * Return: the value of the bit at index, or -1 if an error occurred
+ * Return: 1 if worked, -1 in case of an error
  */
-int get_bit(unsigned long int n, unsigned int index)
+int set_bit(unsigned long int *n, unsigned int index)
 {
-	if (index >= sizeof(n) * 8)
+	if (index >= sizeof(unsigned long int) * 8)
 		return (-1);
 
-	return ((n >> index) & 1);
+	*n |= (1UL << index);
+
+	return (1);
 }
