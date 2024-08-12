@@ -3,6 +3,7 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <sys/stat.h>
+#include <string.h>
 
 /**
  * print_error - formats and prints error messages
@@ -14,7 +15,11 @@
  */
 void print_error(const char *message, const char *filename, int exit_code)
 {
-	dprintf(STDERR_FILENO, "%s %s\n", message, filename);
+	char error_message[256];
+
+	snprintf(error_message, sizeof(error_message), "%s %s\n", message, filename);
+	write(STDERR_FILENO, error_message, strlen(error_message));
+
 	exit(exit_code);
 }
 
@@ -33,7 +38,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 3)
 	{
-		printf("Usage: cp file_from file_to\n");
+		write(STDERR_FILENO, "Usage: cp file_from file_to\n", 28);
 		return (97);
 	}
 	rdfd = open(argv[1], O_RDONLY);
