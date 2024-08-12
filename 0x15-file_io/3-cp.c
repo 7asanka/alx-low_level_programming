@@ -12,10 +12,10 @@
  *
  * Return: the exit code
  */
-int print_error(const char *message, const char *filename, int exit_code)
+void print_error(const char *message, const char *filename, int exit_code)
 {
-	printf("%s %s\n", message, filename);
-	return (exit_code);
+	dprintf(STDERR_FILENO, "%s %s\n", message, filename);
+	exit(exit_code);
 }
 
 /**
@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 {
 	int rdfd, wrfd;
 	ssize_t rd, wr;
-	char *buffer = malloc(1024);
+	char *buffer =malloc(1024);
 
 	if (argc != 3)
 	{
@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
 	if (wrfd == -1)
 		print_error("Error: Can't write to %s\n", argv[2], 99);
 
-	while ((rd = read(rdfd, buffer, 1024) > 0))
+	while ((rd = read(rdfd, buffer, 1024)) > 0)
 	{
 		wr = write(wrfd, buffer, 1024);
 		if (wr == -1)
@@ -57,6 +57,6 @@ int main(int argc, char *argv[])
 		print_error("Error: Can't close fd %s\n", argv[1], 100);
 	if (close(wrfd) == -1)
 		print_error("Error: Can't close fd %s\n", argv[2], 100);
-
+	free(buffer);
 	return (0);
 }
