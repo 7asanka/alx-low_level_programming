@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 {
 	int rdfd, wrfd;
 	ssize_t rd, wr;
-	char *buffer =malloc(1024);
+	char buffer[1024];
 
 	if (argc != 3)
 	{
@@ -47,7 +47,7 @@ int main(int argc, char *argv[])
 
 	while ((rd = read(rdfd, buffer, 1024)) > 0)
 	{
-		wr = write(wrfd, buffer, 1024);
+		wr = write(wrfd, buffer, rd);
 		if (wr == -1)
 			print_error("Error: Can't write to %s\n", argv[2], 99);
 	}
@@ -57,6 +57,5 @@ int main(int argc, char *argv[])
 		print_error("Error: Can't close fd %s\n", argv[1], 100);
 	if (close(wrfd) == -1)
 		print_error("Error: Can't close fd %s\n", argv[2], 100);
-	free(buffer);
 	return (0);
 }
