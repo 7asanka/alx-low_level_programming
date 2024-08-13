@@ -56,15 +56,11 @@ int main(int argc, char *argv[])
 		wr = write(wrfd, buffer, rd);
 		if (wr == -1)
 		{
-			close(rdfd);
-			close(wrfd);
 			print_error("Error: Can't write to", argv[2], 99);
 		}
 	}
 	if (rd == -1)
 	{
-		close(rdfd);
-		close(wrfd);
 		print_error("Error: Can't read from", argv[1], 98);
 	}
 	if (close(rdfd) == -1)
