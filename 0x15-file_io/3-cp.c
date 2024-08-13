@@ -64,8 +64,8 @@ int main(int argc, char *argv[])
 		print_error("Error: Can't read from", argv[1], 98);
 	}
 	if (close(rdfd) == -1)
-		print_error("Error: Can't close fd", argv[1], 100);
+		print_error("Error: Can't close fd", "", 100);
 	if (close(wrfd) == -1)
-		print_error("Error: Can't close fd", argv[2], 100);
+		print_error("Error: Can't close fd", "", 100);
 	return (0);
 }
