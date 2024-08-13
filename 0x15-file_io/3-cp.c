@@ -43,13 +43,13 @@ int main(int argc, char *argv[])
 	}
 	rdfd = open(argv[1], O_RDONLY);
 	if (rdfd == -1)
-		print_error("Error: Can't read from %s\n", argv[1], 98);
+		print_error("Error: Can't read from", argv[1], 98);
 	wrfd = open(argv[2], O_WRONLY | O_TRUNC | O_CREAT, S_IRUSR | S_IWUSR
 			| S_IRGRP | S_IWGRP | S_IROTH);
 	if (wrfd == -1)
 	{
 		close(rdfd);
-		print_error("Error: Can't write to %s\n", argv[2], 99);
+		print_error("Error: Can't write to", argv[2], 99);
 	}
 	while ((rd = read(rdfd, buffer, 1024)) > 0)
 	{
@@ -58,18 +58,18 @@ int main(int argc, char *argv[])
 		{
 			close(rdfd);
 			close(wrfd);
-			print_error("Error: Can't write to %s\n", argv[2], 99);
+			print_error("Error: Can't write to", argv[2], 99);
 		}
 	}
 	if (rd == -1)
 	{
 		close(rdfd);
 		close(wrfd);
-		print_error("Error: Can't read from %s\n", argv[1], 98);
+		print_error("Error: Can't read from", argv[1], 98);
 	}
 	if (close(rdfd) == -1)
-		print_error("Error: Can't close fd %s\n", argv[1], 100);
+		print_error("Error: Can't close fd", argv[1], 100);
 	if (close(wrfd) == -1)
-		print_error("Error: Can't close fd %s\n", argv[2], 100);
+		print_error("Error: Can't close fd", argv[2], 100);
 	return (0);
 }
