@@ -9,3 +9,13 @@ all: $(OBJ)
 
 %.o: %.c
 	$(CC) -c -o $@ $<
+
+clean:
+	$(RM) *~ $(NAME)
+
+oclean:
+	rm -f main.o school.o
+
+fclean: clean oclean
+
+re: oclean all
